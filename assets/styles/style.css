@@ -1,0 +1,336 @@
+/*-----------------------------------*\
+  #BASE
+\*-----------------------------------*/
+/*
+- ELEMENTS
+- FONTS
+- GENERICS (regras genericas. não aprendi o que é)
+- UTILITIES
+- RESET (reset de elementos)
+*/
+
+
+
+/**
+ * FONTS
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+
+
+/**
+ * VARIABLES
+*/
+
+:root {
+    /* Colors */
+
+    --color1: hsl(0, 0%, 100%);
+    --color2: hsl(0, 0%, 0%);
+
+
+    /* Typography */
+
+    /* fonts-families */
+
+    --ff-body: 'Alata', sans-serif;
+    --ff-title: 'Josefin Sans', sans-serif;
+
+
+    /* font-sizes */
+
+    --smaller-x1-fs: 1.4rem; /*btn*/
+    --normal-fs: 1.5rem; /*p*/
+    --bigger-x1-fs: 2.4rem; /*h3*/
+    --bigger-x2-fs: 3.2rem; /*h2*/
+    --bigger-x3-fs: 4rem; /*h1*/
+}
+
+@media (min-width: 756px){
+    :root {
+    
+        /* Typography */
+    
+        /* font-sizes */
+
+        --bigger-x1-fs: 3.2rem; /*h3*/
+        --bigger-x2-fs: 4.8rem; /*h2*/
+        --bigger-x3-fs: 7.2rem; /*h1*/    
+    }
+}
+
+
+
+/**
+ * RESET
+*/
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+ input,
+ button {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+
+
+/**
+ * ELEMENTS
+*/
+
+input { width: 100%; }
+
+button { cursor: pointer; }
+
+img {
+    max-width: 100%; 
+    height: auto;
+}
+
+p {
+    font-family: var(--ff-body);
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--ff-title);
+    font-weight: 300;
+}
+
+html {
+    font-family: var(--ff-body);
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: var(--normal-fs);
+    font-family: var(--ff-body);
+    overflow: hidden;
+}
+
+
+
+
+/*-----------------------------------*\
+  #LAYOUT
+\*-----------------------------------*/
+
+.l-container {
+    max-width: 110rem;
+    padding-inline: 2.4rem;
+    margin-inline: auto;
+}
+
+.l-header {
+    position: absolute;
+    padding-top: 4rem;
+    width: 100%;
+    z-index: 20;
+}
+
+.l-home {
+    /* padding-top: calc(4rem + 2.4rem); */
+    position: relative;
+    height: 100vh;    
+}
+@media (min-width: 756px) {
+    .l-home {
+        height: 65rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.l-home .l-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+/*-----------------------------------*\
+  #COMPONENTS
+\*-----------------------------------*/
+
+/**
+ * NAV
+*/
+
+.c-nav {
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.c-nav__logo,
+.c-nav__toggle,
+.c-nav__close {
+    cursor: pointer;
+}
+
+.c-nav__logo {
+    height: 2.4rem;
+}
+
+.c-nav__link {
+    height: 2.4rem;
+}
+
+.c-nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+    color: var(--color1);
+}
+
+.c-nav__icons {
+    display: none;
+}
+
+
+/**
+ * NAV--HEADER
+*/
+
+@media (max-width: 756px) {
+    .l-header .c-nav__menu {
+        position: absolute;    
+        left: -120%;
+    }
+}
+
+@media (min-width: 756px) {
+    .l-header .c-nav__logo {
+        height: 3.2rem;
+    }
+}
+
+.l-header .c-nav__icons {
+    display: flex;
+    align-items: center;
+}
+@media (min-width: 756px) {
+    .l-header .c-nav__icons {
+        display: none;
+    }
+} 
+
+.l-header .c-nav__close {
+    display: none;
+}
+
+/* State */
+
+.l-header.is-active {
+    background-color: var(--color2);
+}
+
+.l-header.is-active .c-nav {
+    height: 100vh;    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2.4rem 1fr;
+}
+
+.l-header.is-active .c-nav .c-nav__menu {
+    position: static;
+    grid-column: 1/3;
+    align-self: center;
+    justify-self: start;
+    transform: translateY(calc(-4rem - 2.4rem));
+    font-family: var(--ff-title);
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.l-header.is-active .c-nav .c-nav__menu .c-nav__link,
+.l-header.is-active .c-nav .c-nav__menu .c-nav__item {
+    width: 100%;
+}
+
+.l-header.is-active .c-nav .c-nav__icons {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: end;    
+}
+
+.l-header.is-active .c-nav .c-nav__toggle {
+    display: none;
+}
+
+.l-header.is-active .c-nav .c-nav__close {
+    display: block;
+}
+
+
+
+/**
+ * HOME-PICTURE
+*/
+
+.c-home__img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/**
+ * HOME-TITLE
+*/
+
+.c-home__title {
+    /* position: absolute; */
+    /* top: 50%; */
+    padding: 2.6rem 2.4rem;
+    border: 1px solid var(--color1);
+    font-size: var(--bigger-x3-fs);
+    /* display: flex; */
+    /* align-items: center; */
+    /* height: 100%; */
+    color: var(--color1);
+    line-height: 3.8rem;
+    z-index: 20;
+}
+
+
+
+/**
+ * HOME-TITLE
+*/
+
+.l-about {
+    height: 500px;
+}

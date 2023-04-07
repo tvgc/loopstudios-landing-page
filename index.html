@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/styles/style.css">
   
   <title>Frontend Mentor | Loopstudios landing page</title>
 
@@ -15,13 +16,73 @@
   </style>
 </head>
 <body>
-  About
-  Careers
-  Events
-  Products
-  Support
 
-  Immersive experiences that deliver
+  <!-- HEADER -->
+  <header class="l-header">
+    <div class="l-container">
+      <nav class="c-nav">
+        <img class="c-nav__logo" src="assets/images/logo.svg" alt="Logo">
+
+        <ul class="c-nav__menu">
+          <li class="c-nav__item">
+            <a href="#about" class="c-nav__link">About</a>
+          </li>
+          <li class="c-nav__item">
+            <a href="#carrers" class="c-nav__link">Careers</a>
+          </li>
+          <li class="c-nav__item">
+            <a href="#events" class="c-nav__link">Events</a>
+          </li>
+          <li class="c-nav__item">
+            <a href="#products" class="c-nav__link">Products</a>
+          </li>
+          <li class="c-nav__item">
+            <a href="#support" class="c-nav__link">Support</a>
+          </li>
+        </ul>
+
+        <div class="c-nav__icons">
+          <img class="c-nav__toggle" src="assets/images/icon-hamburger.svg" alt="">
+          <img class="c-nav__close" src="assets/images/icon-close.svg" alt="">
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- MAIN -->
+  <main class="l-main">
+
+    <!-- HOME -->
+    <section class="l-home">
+        <picture class="c-home__picture">
+          <source media="(max-width: 756px)" srcset="assets/images/mobile/image-hero.jpg">
+          <source media="(min-width: 757px)" srcset="assets/images/desktop/image-hero.jpg">
+          <img class="c-home__img" src="assets/images/mobile/image-hero.jpg" alt="">
+        </picture>
+
+        <div class="l-container">
+          <h1 class="c-home__title">Immersive <br> experiences <br> that deliver</h1>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="l-section l-about">
+      <div class="l-container">
+        <picture class="c-about__picture">
+          <source media="(max-width: 756px)" srcset="assets/images/mobile/image-interactive.jpg">
+          <source media="(min-width: 757px)" srcset="assets/images/desktop/image-interactive.jpg">
+          
+          <img src="assets/images/mobile/image-interactive.jpg" alt="">
+        </picture>
+      </div>
+    </section>
+  </main>
+  
+  
+  
+  
+
+  
 
   The leader in interactive VR
 
