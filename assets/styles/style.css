@@ -255,6 +255,8 @@ body {
 }
 
 
+
+
 /*-----------------------------------*\
   #COMPONENTS
 \*-----------------------------------*/
@@ -281,6 +283,18 @@ body {
 
 .c-nav__link {
     height: 2.4rem;
+    position: relative;
+}
+
+.c-nav__link::after {
+    content: '';
+    position: absolute;
+    /* right: 0; */
+    bottom: -50%;
+    height: 0.2rem;
+    width: 2.4rem;
+    background-color: var(--color1);
+    /* transform: translateX(50%); */
 }
 
 .c-nav__menu {
@@ -513,6 +527,12 @@ body {
     letter-spacing: 0.5rem;
     border: solid var(--color2) 1px;
     grid-area: button;
+    transition: ease 250ms;
+}
+
+.o-button:hover {
+    background-color: var(--color2);
+    color: var(--color1);
 }
 
 
