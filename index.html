@@ -18,30 +18,30 @@
 <body>
 
   <!-- HEADER -->
-  <header class="l-header">
+  <header class="l-header js-header-layout">
     <div class="l-container">
       <nav class="c-nav">
         <img class="c-nav__logo" src="assets/images/logo.svg" alt="Logo">
 
         <ul class="c-nav__menu">
           <li class="c-nav__item">
-            <a href="#about" class="c-nav__link">About</a>
+            <a href="#about" class="c-nav__link js-menu-link">About</a>
           </li>
           <li class="c-nav__item">
-            <a href="#carrers" class="c-nav__link">Careers</a>
+            <a href="#carrers" class="c-nav__link js-menu-link">Careers</a>
           </li>
           <li class="c-nav__item">
-            <a href="#events" class="c-nav__link">Events</a>
+            <a href="#events" class="c-nav__link js-menu-link">Events</a>
           </li>
           <li class="c-nav__item">
-            <a href="#products" class="c-nav__link">Products</a>
+            <a href="#products" class="c-nav__link js-menu-link">Products</a>
           </li>
           <li class="c-nav__item">
-            <a href="#support" class="c-nav__link">Support</a>
+            <a href="#support" class="c-nav__link js-menu-link">Support</a>
           </li>
         </ul>
 
-        <div class="c-nav__icons">
+        <div class="c-nav__icons js-toggle">
           <img class="c-nav__toggle" src="assets/images/icon-hamburger.svg" alt="">
           <img class="c-nav__close" src="assets/images/icon-close.svg" alt="">
         </div>
@@ -66,7 +66,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="l-section l-about">
+    <section class="l-section l-about" id="about">
       <div class="l-container">
         <picture class="c-about__picture">
           <source media="(max-width: 756px)" srcset="assets/images/mobile/image-interactive.jpg">
@@ -86,7 +86,7 @@
     </section>
 
     <!-- CREATIONS -->
-    <section class="l-section l-creations">
+    <section class="l-section l-creations" id="products">
       <div class="l-container">
         <h2 class="c-creations__main-title">Our creations</h2>
 
@@ -169,6 +169,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="l-footer">
     <div class="l-container">
       <nav class="c-nav">
@@ -219,7 +220,7 @@
     </div>
   </footer>
 
-  
+  <script src="assets/js/main.js"></script>
 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

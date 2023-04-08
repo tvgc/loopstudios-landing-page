@@ -330,6 +330,7 @@ body {
 
 .l-header.is-active {
     background-color: var(--color2);
+    z-index: 99;
 }
 
 .l-header.is-active .c-nav {
@@ -384,6 +385,9 @@ body {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .c-home__title {
