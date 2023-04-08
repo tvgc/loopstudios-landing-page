@@ -186,8 +186,6 @@ body {
     opacity: 1;
 }
 
-
-
 /*-----------------------------------*\
   #LAYOUT
 \*-----------------------------------*/
@@ -315,32 +313,6 @@ body {
     height: 2.4rem;
     position: relative;
 }
-
-/* .c-nav__link::after {
-    content: '';
-    height: 0.2rem;
-    width: 0;
-    background-color: var(--color1);
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    transition: ease 250ms;
-    opacity: 0;
-}
-
-
-.c-nav__link:hover::after {
-    content: '';
-    height: 0.2rem;
-    width: 2.4rem;
-    background-color: var(--color1);
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    opacity: 1;
-} */
 
 .c-nav__menu {
     display: flex;
@@ -538,6 +510,18 @@ body {
 
 .c-creations__card {
     position: relative;
+    cursor: pointer;
+}
+
+.c-creations__card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, 0),hsla(0, 0%, 100%, 0));
+}
+
+.c-creations__card:hover::after {
+    background: linear-gradient(0deg, hsla(0, 0%, 100%, 0.75),hsla(0, 0%, 100%, 0.75));
 }
 
 .c-creations__img {
@@ -551,6 +535,12 @@ body {
     bottom: 20px;
     left: 20px;
     color: var(--color1);
+    z-index: 99;
+}
+
+.c-creations__card:hover .c-creations__title {
+    color: var(--color2);
+    
 }
 
 @media (min-width: 756px) {
